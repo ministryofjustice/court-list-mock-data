@@ -1,7 +1,7 @@
 FROM rodolpheche/wiremock
 
-RUN addgroup -g 1000 -S appgroup && \
-    adduser -u 1000 -S appuser -G appgroup
+RUN addgroup --gid 2000 --system appgroup && \
+    adduser --uid 2000 --system appuser --gid 2000
 
 
 WORKDIR /wiremock
@@ -11,4 +11,4 @@ COPY stubs /home/wiremock
 RUN chown -R appuser:appgroup /wiremock
 
 
-USER 1000
+USER 2000
