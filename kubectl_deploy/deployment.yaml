@@ -19,6 +19,8 @@ spec:
           image: 754256621582.dkr.ecr.eu-west-2.amazonaws.com/probation-services/court-list-mock-data:latest
           ports:
             - containerPort: 8080
+          securityContext:
+            runAsUser: 1
 
 
 
