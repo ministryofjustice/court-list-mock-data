@@ -1,0 +1,25 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: court-list-mock-data
+  labels:
+    app: court-list-mock-data
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: court-list-mock-data
+  template:
+    metadata:
+      labels:
+        app: court-list-mock-data
+    spec:
+      containers:
+        - name: court-list-mock-data
+          image: 754256621582.dkr.ecr.eu-west-2.amazonaws.com/probation-services/court-list-mock-data:latest
+          ports:
+            - containerPort: 8080
+
+
+
+

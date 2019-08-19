@@ -1,0 +1,12 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: court-list-mock-data
+spec:
+  selector:
+    app: court-list-mock-data
+  ports:
+    - protocol: TCP
+      port: 8000
+      targetPort: 8080
+  type: NodePort
