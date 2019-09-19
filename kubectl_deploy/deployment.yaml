@@ -21,6 +21,9 @@ spec:
             - containerPort: 8080
           securityContext:
             runAsUser: 1
+          env:
+            - name: JAVA_OPTS
+              value: "-Xmx612m"
 
 
 
